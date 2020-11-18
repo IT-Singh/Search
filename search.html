@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS File -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+    <title>StudyNext - Search</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center  mt-3 mb-2">
+                <div class="card px-0 mt-3 pb-0  mb-3">
+                    <h4 id="heading">StudyNext Search</h4>
+                    <form id="msform">
+
+                        <ul id="progressbar">
+                            <li class="active" id="account"><strong>My Preferences</strong></li>
+                            <li id="personal"><strong>Select Disciplines</strong></li>
+                            <li id="payment"><strong>Your Details</strong></li>
+                            <li id="confirm"><strong>My English Scores</strong></li>
+                        </ul>
+
+                        <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                            aria-valuemin="0" aria-valuemax="100" style="height:10px"></div> -->
+                        <br>
+
+                        <!-- fieldset 1 My Preferences -->
+                        <fieldset>
+                            <div class="form-card">
+                                <!-- <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">My Preferences:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps" style="font-weight: 600;">Step 1 - 4</h2>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div id="choose_country">
+                                            <label class="fieldlabels">Country: *</label><br>
+                                            <ul class="ks-cboxtags">
+                                                <li><input type="checkbox" name="country" id="check_0" checked>
+                                                    <label for="check_0">Canada</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div id="prog_level">
+                                            <label class="fieldlabels">Please select program levels:
+                                                *</label><br>
+                                            <ul class="ks-rboxtags">
+                                                <li><input type="radio" name="radio1" id="radio_1" value="Undergraduate"
+                                                        onclick="showfield_ug()">
+                                                    <label for="radio_1">Undergraduate</label></li>
+                                                <li><input type="radio" name="radio1" id="radio_2" value="Post Graduate"
+                                                        onclick="showfield_pg()">
+                                                    <label for="radio_2">Post Graduate</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div id="forUG" style="display: none;" name="forUG">
+                                            <label class="fieldlabels">Please Select:
+                                                *</label><br>
+                                            <ul class="ks-cboxtags">
+                                                <li><input type="checkbox" name="c1y" id="check_1">
+                                                    <label for="check_1">Certificate - 1 Year</label></li>
+                                                <li><input type="checkbox" name="d2y" id="check_2">
+                                                    <label for="check_2">Diploma - 2 Years</label></li>
+                                                <li><input type="checkbox" name="ad3y" id="check_3">
+                                                    <label for="check_3">Advanced Diploma - 3 years</label></li>
+                                                <li><input type="checkbox" name="b3y" id="check_4">
+                                                    <label for="check_4">Bachelors - 3 years</label></li>
+                                                <li><input type="checkbox" name="b4y" id="check_5">
+                                                    <label for="check_5">Bachelors - 4 years</label></li>
+                                            </ul>
+                                        </div>
+                                        <div id="forPG" style="display: none;" name="forPG">
+                                            <label class="fieldlabels">Please Select:
+                                                *</label><br>
+                                            <ul class="ks-cboxtags">
+                                                <li><input type="checkbox" name="pgc" id="check_a">
+                                                    <label for="check_a">Post Graduate Certificate/Diploma</label></li>
+                                                <li><input type="checkbox" name="mas" id="check_b">
+                                                    <label for="check_b">Masters</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="choose_stream" style="display: none;" name="choose_stream">
+                                            <label class="fieldlabels">Please select the stream:
+                                                *</label>
+                                            <br>
+                                            <ul class="ks-cboxtags">
+                                                <li><input type="checkbox" name="agri" id="check_a1"
+                                                        onclick="myfunc_1()">
+                                                    <label for="check_a1">Agriculture</label></li>
+
+                                                <li><input type="checkbox" name="eat" id="check_a2"
+                                                        onclick="myfunc_2()">
+                                                    <label for="check_a2">Engineering and Technology</label></li>
+
+                                                <li><input type="checkbox" name="sci" id="check_a3"
+                                                        onclick="myfunc_3()">
+                                                    <label for="check_a3">Science</label></li>
+
+                                                <li><input type="checkbox" name="arts" id="check_a4"
+                                                        onclick="myfunc_4()">
+                                                    <label for="check_a4">Arts</label></li>
+
+                                                <li><input type="checkbox" name="bfaa" id="check_a5"
+                                                        onclick="myfunc_5()">
+                                                    <label for="check_a5">Business Finance and Administration</label>
+                                                </li>
+
+                                                <li><input type="checkbox" name="csai" id="check_a6"
+                                                        onclick="myfunc_6()">
+                                                    <label for="check_a6">Computer Science and IT</label></li>
+
+                                                <li><input type="checkbox" name="scsat" id="check_a7"
+                                                        onclick="myfunc_7()">
+                                                    <label for="check_a7">Social, Community Service and Teaching</label>
+                                                </li>
+
+                                                <li><input type="checkbox" name="hfam" id="check_a8"
+                                                        onclick="myfunc_8()">
+                                                    <label for="check_a8">Health Food and Medical</label></li>
+
+                                                <li><input type="checkbox" name="chtlas" id="check_a9"
+                                                        onclick="myfunc_9()">
+                                                    <label for="check_a9">Culinary, Hospitality, Tourism, Liesure and
+                                                        Sports</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" name="next" class="next action-button rounded-pill" value="Next" />
+                        </fieldset>
+
+                        <!-- fieldset 2 Select Disciplines -->
+                        <fieldset>
+                            <div class="form-card">
+                                <!-- <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Select Disciplines:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 2 - 4</h2>
+                                    </div>
+                                </div> -->
+
+                                <div class="step_2">
+                                    <div id="d_agri" name="d_agri" style="display: none;">
+                                        <label class="fieldlabels">For Agriculture *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_agri1" id="check_d1">
+                                                <label for="check_d1">Agriculture</label></li>
+                                        </ul>
+                                    </div>
+
+
+
+                                    <div id="d_eat" name="d_eat" style="display: none;">
+                                        <label class="fieldlabels">For Engineering and Technology *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_eat1" id="check_d2">
+                                                <label for="check_d2">Aerospace, Aviation and Pilot Technology</label>
+                                            </li>
+                                            <li><input type="checkbox" name="ss_eat2" id="check_d3">
+                                                <label for="check_d3">Agriculture</label></li>
+                                            <li><input type="checkbox" name="ss_eat3" id="check_d4">
+                                                <label for="check_d4">Architecture</label></li>
+                                            <li><input type="checkbox" name="ss_eat4" id="check_d5">
+                                                <label for="check_d5">Biomedical Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat5" id="check_d6">
+                                                <label for="check_d6">Chemical Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat6" id="check_d7">
+                                                <label for="check_d7">Civil Engineering, Construction</label></li>
+                                            <li><input type="checkbox" name="ss_eat7" id="check_d8">
+                                                <label for="check_d8">Electrical Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat8" id="check_d9">
+                                                <label for="check_d9">Electronic</label></li>
+                                            <li><input type="checkbox" name="ss_eat9" id="check_d10">
+                                                <label for="check_d10">Environmental Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat10" id="check_d11">
+                                                <label for="check_d11">Industrial</label></li>
+                                            <li><input type="checkbox" name="ss_eat11" id="check_d12">
+                                                <label for="check_d12">Material Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat12" id="check_d13">
+                                                <label for="check_d13">Mechanical, Manufacturing, Robotic
+                                                    Engineering</label></li>
+                                            <li><input type="checkbox" name="ss_eat13" id="check_d14">
+                                                <label for="check_d14">Radiography</label></li>
+                                            <li><input type="checkbox" name="ss_eat14" id="check_d15">
+                                                <label for="check_d15">Radiography</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_sci" name="d_sci" style="display: none;">
+                                        <label class="fieldlabels">For Science *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_sci1" id="check_d16">
+                                                <label for="check_d16">Biochemistry</label></li>
+                                            <li><input type="checkbox" name="ss_sci2" id="check_d17">
+                                                <label for="check_d17">Biology</label></li>
+                                            <li><input type="checkbox" name="ss_sci3" id="check_d18">
+                                                <label for="check_d18">Chemistry</label></li>
+                                            <li><input type="checkbox" name="ss_sci4" id="check_d19">
+                                                <label for="check_d19">Environmental, Earth Science</label></li>
+                                            <li><input type="checkbox" name="ss_sci5" id="check_d20">
+                                                <label for="check_d20">General</label></li>
+                                            <li><input type="checkbox" name="ss_sci6" id="check_d21">
+                                                <label for="check_d21">Mathematics</label></li>
+                                            <li><input type="checkbox" name="ss_sci7" id="check_d22">
+                                                <label for="check_d22">Pharmacy</label></li>
+                                            <li><input type="checkbox" name="ss_sci8" id="check_d23">
+                                                <label for="check_d23">Physics</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_arts" name="d_arts" style="display: none;">
+                                        <label class="fieldlabels">For Arts *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_arts1" id="check_d24">
+                                                <label for="check_d24">Humanitarian Services</label></li>
+                                            <li><input type="checkbox" name="ss_arts2" id="check_d25">
+                                                <label for="check_d25">Political</label></li>
+                                            <li><input type="checkbox" name="ss_arts3" id="check_d26">
+                                                <label for="check_d26">Psychology, Philosophy</label></li>
+                                            <li><input type="checkbox" name="ss_arts4" id="check_d27">
+                                                <label for="check_d27">Animation</label></li>
+                                            <li><input type="checkbox" name="ss_arts5" id="check_d28">
+                                                <label for="check_d28">Anthropology</label></li>
+                                            <li><input type="checkbox" name="ss_arts6" id="check_d29">
+                                                <label for="check_d29">Communication</label></li>
+                                            <li><input type="checkbox" name="ss_arts7" id="check_d30">
+                                                <label for="check_d30">English Literature</label></li>
+                                            <li><input type="checkbox" name="ss_arts8" id="check_d31">
+                                                <label for="check_d31">Fashion, Esthetics</label></li>
+                                            <li><input type="checkbox" name="ss_arts9" id="check_d32">
+                                                <label for="check_d32">Fine Arts</label></li>
+                                            <li><input type="checkbox" name="ss_arts10" id="check_d33">
+                                                <label for="check_d33">Gender Studies</label></li>
+                                            <li><input type="checkbox" name="ss_arts11" id="check_d34">
+                                                <label for="check_d34">Geography</label></li>
+                                            <li><input type="checkbox" name="ss_arts12" id="check_d35">
+                                                <label for="check_d35">Global Studies</label></li>
+                                            <li><input type="checkbox" name="ss_arts13" id="check_d36">
+                                                <label for="check_d36">Graphic design, Interior design</label></li>
+                                            <li><input type="checkbox" name="ss_arts14" id="check_d37">
+                                                <label for="check_d37">History</label></li>
+                                            <li><input type="checkbox" name="ss_arts15" id="check_d38">
+                                                <label for="check_d38">Journalism</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d39">
+                                                <label for="check_d39">Languages</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d40">
+                                                <label for="check_d40">Liberal Arts</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d41">
+                                                <label for="check_d41">Law, Politics, Police, Security</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d42">
+                                                <label for="check_d42">Music, Audio</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d43">
+                                                <label for="check_d43">General</label></li>
+                                            <li><input type="checkbox" name="ss_arts16" id="check_d44">
+                                                <label for="check_d44">Sociology</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_bfaa" name="d_bfaa" style="display: none;">
+                                        <label class="fieldlabels">For Business Finance and Administration *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_bfaa1" id="check_d45">
+                                                <label for="check_d45">Accounting</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa2" id="check_d46">
+                                                <label for="check_d46">Entreprenuership</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa3" id="check_d47">
+                                                <label for="check_d47">Finance, Economics</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa4" id="check_d48">
+                                                <label for="check_d48">Human Resource</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa5" id="check_d49">
+                                                <label for="check_d49">International Business</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa6" id="check_d50">
+                                                <label for="check_d50">Management, Administration, General</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa7" id="check_d51">
+                                                <label for="check_d51">Marketing, Analyst, Advertising</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa8" id="check_d52">
+                                                <label for="check_d52">Public Relation</label></li>
+                                            <li><input type="checkbox" name="ss_bfaa9" id="check_d53">
+                                                <label for="check_d53">Supply Chain Management</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_csai" name="d_csai" style="display: none;">
+                                        <label class="fieldlabels">For Computer Science and IT *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_csai1" id="check_d54">
+                                                <label for="check_d54">Game Design, animation, game creation</label>
+                                            </li>
+                                            <li><input type="checkbox" name="ss_csai2" id="check_d55">
+                                                <label for="check_d55">Computer Science</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_scsat" name="d_scsat" style="display: none;">
+                                        <label class="fieldlabels">For Social, Community Service and Teaching *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_scsat1" id="check_d56">
+                                                <label for="check_d56">Community, social service</label></li>
+                                            <li><input type="checkbox" name="ss_scsat2" id="check_d57">
+                                                <label for="check_d57">Teaching, Early Development, Child care</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_hfam" name="d_hfam" style="display: none;">
+                                        <label class="fieldlabels">For Health Food and Medical *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d58">
+                                                <label for="check_d58">Dental</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d59">
+                                                <label for="check_d59">Food, Nutrition, Exercise</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d60">
+                                                <label for="check_d60">Therapy</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_61">
+                                                <label for="check_d61">Health Science</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d62">
+                                                <label for="check_d62">Pharmacy</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d63">
+                                                <label for="check_d63">Paramedic</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d64">
+                                                <label for="check_d64">Veterinian</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d65">
+                                                <label for="check_d65">Kinesiology</label></li>
+                                            <li><input type="checkbox" name="ss_hfam" id="check_d66">
+                                                <label for="check_d66">Nursing</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="d_chtlas" name="d_chtlas" style="display: none;">
+                                        <label class="fieldlabels">For Culinary, Hospitality, Tourism, Liesure and
+                                            Sports
+                                            *</label>
+                                        <br>
+                                        <ul class="ks-cboxtags">
+                                            <li><input type="checkbox" name="ss_chlas1" id="check_d67">
+                                                <label for="check_d67">Food and Culinary</label></li>
+                                            <li><input type="checkbox" name="ss_chlas2" id="check_d68">
+                                                <label for="check_d68">Hospitality and Tourism, Recreation</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" name="next" class="next action-button rounded-pill" value="Next" />
+                            <input type="button" name="previous" class="previous action-button-previous rounded-pill"
+                                value="Previous" />
+                        </fieldset>
+
+                        <!-- fieldset 3 Your Details -->
+                        <fieldset>
+                            <div class="form-card">
+                                <!-- <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Yours Details:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 3 - 4</h2>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="fieldlabels">Full Name: *</label>
+                                        <input type="text" name="fname" placeholder="Full Name" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="fieldlabels">Email: *</label>
+                                        <input type="email" name="email" placeholder="Email" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="fieldlabels">Contact No: *</label>
+                                        <input type="text" name="phno" placeholder="Contact No." />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="fieldlabels">Nationality: *</label>
+                                        <select name="nationality">
+                                            <option>India</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="fieldlabels">Country of my highest qualification: *</label>
+                                        <select name="country_of_qua">
+                                            <option>India</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="fieldlabels">My Highest Qualification: *</label>
+                                        <select name="qualification" onchange="ChangeDropdowns_1(this.value);">
+                                            <option value="select">Select</option>
+                                            <option value="ssec">Standard XII</option>
+                                            <option value="ug">Undergraduate</option>
+                                            <option value="pg">Post Graduate</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="l_ssec" style="display: none;">
+                                            <label class="fieldlabels">Select according to your qualification:
+                                                *</label><br>
+                                            <input type="checkbox" name="for_ssec1" id="check_ssec1"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_ssec1">All India Senior School Certificate/CBSE</label>
+                                            <br>
+                                            <input type="checkbox" name="for_ssec2" id="check_ssec2"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_ssec2">State Boards</label>
+                                        </div>
+
+                                        <div id="l_ug" style="display: none;">
+                                            <label class="fieldlabels">Select according to your qualification:
+                                                *</label><br>
+                                            <input type="checkbox" name="for_ug1" id="check_ug1"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_ug1">Diploma</label>
+                                            <br>
+                                            <input type="checkbox" name="for_ug2" id="check_ug2"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_ug2">Bachelors - 3 years</label>
+                                            <br>
+                                            <input type="checkbox" name="for_ug3" id="check_ug3"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_ug3">Bachelors - 4 years</label>
+                                        </div>
+
+                                        <div id="l_pg" style="display: none;">
+                                            <label class="fieldlabels">Select according to your qualification:
+                                                *</label><br>
+                                            <input type="checkbox" name="for_pg1" id="check_pg1"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_pg1">Post Graduate Diploma</label>
+                                            <br>
+                                            <input type="checkbox" name="for_pg2" id="check_pg2"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_pg2">Masters</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" style="display: none;" id="grade">
+                                        <div>
+                                            <label class="fieldlabels">Grade Type: *</label><br>
+                                            <input type="checkbox" name="grade1" id="check_g1"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_g1">Percentage</label>
+                                            <br>
+                                            <input type="checkbox" name="grade2" id="check_g2"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_g2">India Grading Scale (1-10)</label>
+                                            <br>
+                                            <input type="checkbox" name="grade3" id="check_g3"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_g3">GPA Scale (1-4)</label>
+                                            <br>
+                                            <input type="checkbox" name="grade4" id="check_g4"
+                                                style="width: auto; box-shadow:none;">
+                                            <label for="check_g4">Grade</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="fieldlabels">Any Work Experience:</label><br>
+                                        <textarea name="work_ex" id="work_ex" rows="5"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button rounded-pill" value="Next" />
+                            <input type="button" name="previous" class="previous action-button-previous rounded-pill"
+                                value="Previous" />
+                        </fieldset>
+
+                        <!-- fieldset 4 My English Scores -->
+                        <fieldset>
+                            <div class="form-card">
+                                <!-- <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">My English Scores:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 4 - 4</h2>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="step_4">
+                                            <label class="fieldlabels">Please Choose: *</label><br>
+                                            <ul class="ks-cboxtags">
+                                                <li><input type="checkbox" name="eng_score1" id="check_e1" onclick="myfunc_a()">
+                                                    <label for="check_e1">IELTS</label></li>
+                                                <li><input type="checkbox" name="eng_score2" id="check_e2" onclick="myfunc_b()">
+                                                    <label for="check_e2">PTE</label></li>
+                                                <li><input type="checkbox" name="eng_score3" id="check_e3" onclick="myfunc_c()">
+                                                    <label for="check_e3">Yet To Take</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="for_ielts" style="display: none;">
+                                            <label class="fieldlabels">Select your range for IELTS: *</label><br>
+                                            <input id="r" type="range" name="ielts_r" step="0.5" min="5.0" max="9.0"
+                                                style="width: 50%;"><span id="v" class="ml-2 ">7</span>
+                                            <script>
+                                                document.getElementById('r').onchange = function () {
+                                                    document.getElementById('v').innerHTML = this.value;
+                                                };
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div id="for_pte" style="display: none;">
+                                            <label class="fieldlabels">Select your range for PTE: *</label><br>
+                                            <input id="r1" type="range" name="pte_r" step="0.5" min="50" max="90"
+                                                style="width: 50%;"><span id="v1" class="ml-2 ">70</span>
+                                            <script>
+                                                document.getElementById('r1').onchange = function () {
+                                                    document.getElementById('v1').innerHTML = this.value;
+                                                };
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="sub.html"><input type="button" name="next" class="next action-button rounded-pill" value="Submit" /></a>
+                            <input type="button" name="previous" class="previous action-button-previous rounded-pill"
+                                value="Previous" />
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS File -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

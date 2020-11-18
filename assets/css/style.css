@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-b {
+    background-color: #054797;
+}
+
+.bg-lb {
+    background-color: #f1f7fb;
+}
+
+.c-b {
+    color: #054797;
+}
+
+.bg-w {
+    background-color: #ffffff;
+}
+
+.c-w {
+    color: #ffffff;
+}
+
+p {
+    color: #000000;
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #054797;
+    font-weight: normal;
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-card {
+    text-align: left;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+#msform input,
+#msform textarea,
+#msform select {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #054797;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    /* background-color: #ECEFF1; */
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#msform #forUG input,
+#msform #forPG input,
+#msform #choose_stream input,
+#msform #choose_country input,
+#msform #prog_level input,
+#msform .step_2 input,
+#msform .step_4 input {
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+#msform input:focus,
+#msform textarea:focus,
+#msform select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #054797;
+    outline-width: 0;
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #054797;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #054797;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #054797;
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #054797;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.purple-text {
+    color: #054797;
+    font-weight: normal;
+}
+
+.steps {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right;
+}
+
+label {
+    font-size: 13px;
+}
+
+.fieldlabels {
+    color: #000000;
+    text-align: left;
+    font-size: 16px;
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+}
+
+#progressbar .active {
+    color: #054797;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f0b0";
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f03a";
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f007";
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #054797;
+}
+
+
+.progress-bar {
+    background-color: #054797;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+ul.ks-cboxtags,
+ul.ks-rboxtags {
+    list-style: none;
+}
+
+ul.ks-cboxtags li,
+ul.ks-rboxtags li {
+    display: inline-block;
+}
+
+ul.ks-cboxtags li label,
+ul.ks-rboxtags li label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 1px solid #054797;
+    color: #054797;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label,
+ul.ks-rboxtags li label {
+    padding: 3px 8px 3px 8px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before,
+ul.ks-rboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    font-family: FontAwesome;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label::before,
+ul.ks-rboxtags li input[type="radio"]:checked+label::before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label,
+ul.ks-rboxtags li input[type="radio"]:checked+label {
+    border: 1px solid #054797;
+    background-color: #054797;
+    color: #ffffff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"],
+ul.ks-rboxtags li input[type="radio"] {
+    display: absolute;
+}
+
+ul.ks-cboxtags li input[type="checkbox"],
+ul.ks-rboxtags li input[type="radio"] {
+    position: relative;
+    opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label,
+ul.ks-rboxtags li input[type="radio"]:focus+label {
+    border: 1px solid #054797;
+}
+
+
+
+
+
+
+
+.ins_name a,
+.ins_courses #ins1courses a,
+.ins_courses #ins2courses a,
+.ins_courses #ins3courses a,
+.ins_courses #ins4courses a,
+.ins_courses #ins5courses a {
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid #054797;
+    border-radius: 0;
+}
+
+.ins_courses #ins1courses a,
+.ins_courses #ins2courses a,
+.ins_courses #ins3courses a,
+.ins_courses #ins4courses a,
+.ins_courses #ins5courses a {
+    margin: 2px;
+}
+
+.courses_details .card {
+    border: 1px solid #054797;
+}
+
+.courses_details .card-title,
+.courses_details .card-text {
+    font-size: 13px;
+}
+
+.courses_details .btn {
+    font-size: 10px;
+    margin-bottom: 10px;
+    background-color: #054797;
+    color: #ffffff;
+}
+
+.courses_details .btn:focus {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: #054797;
+}
+
+
+
+
+/* for filter dropdown */
+.filter .dropdown .btn {
+    font-size: 12px;
+}
+
+.filter .dropdown .btn:hover {
+    font-size: 12px;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: #054797;
+}
+
+.filter .dropdown .btn:focus {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: #054797;
+}
+
+.filter .dropdown .dropdown-menu {
+    margin-top: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: #054797;
+}
+
+.filter .dropdown .dropdown-menu a {
+    color: #000000;
+}
+
+.filter .dropdown .dropdown-menu a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+/* detail page for pc */
+#forPC table.table-bordered {
+    border: 1px solid #054797;
+}
+
+#forPC table.table-bordered>thead>tr>th {
+    border: 1px solid #054797;
+}
+
+#forPC table.table-bordered>tbody>tr>td {
+    border: 1px solid #054797;
+}
+
+#forPC table tr{
+    font-size: 13px;
+    color: #000000;
+    font-weight: 300;
+}
+
+#forMOBILE table.table-bordered {
+    border: 1px solid #054797;
+}
+
+#forMOBILE table.table-bordered>thead>tr>th {
+    border: 1px solid #054797;
+}
+
+#forMOBILE table.table-bordered>tbody>tr>td {
+    border: 1px solid #054797;
+}
+
+#forMOBILE table tr{
+    font-size: 13px;
+    color: #000000;
+    font-weight: 300;
+}
+
+@media (min-width: 300px){
+    #forPC{
+        display: none;
+    } 
+}
+
+@media (min-width: 320px){
+    #forPC{
+        display: none;
+    } 
+}
+
+@media (min-width: 768px){
+    #forMOBILE{
+        display: none;
+    }
+    #forPC{
+        display: block;
+    } 
+}
+
+@media (min-width: 992px){
+    #forMOBILE{
+        display: none;
+    } 
+}
+
+
+
+#block2 #back{
+    cursor: pointer;
+}
+
+
+
+
+.ins_name .active, .ins_name a:hover {
+    background-color: #054797;
+    color: #ffffff;
+  }
+
+  .ins_courses .active, .ins_courses a:hover {
+    background-color: #054797;
+    color: #ffffff;
+  }

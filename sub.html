@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS File -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+
+    <!-- flag icon cdn link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>StudyNext - Search Results</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+</head>
+
+<body>
+    <!-- block 1 start -->
+    <div class="container" id="block1">
+        <div class="row">
+            <div class="col text-center  mt-3 mb-2">
+
+            </div>
+            <div class="col text-center  mt-3 mb-2">
+                <div class="card px-0 mt-3 pb-0  mb-3">
+                    <h4 id="heading">StudyNext Search Results</h4>
+                </div>
+            </div>
+            <div class="col text-center mt-3 mb-2">
+                <div class="card float-right px-0 mt-3 pb-0 mb-3">
+                    <i class="fa fa-filter c-w bg-b p-2" id="flip"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Filter -->
+        <div class="row filter mb-4 bg-lb pt-3 pb-2 text-center" id="panel" style="display: none;">
+            <div class="col-md-3 mb-2">
+                <div class="dropdown">
+                    <button class="btn pl-4 pr-4 btn-sm rounded-pill bg-b c-w dropdown-toggle" type="button"
+                        id="SelectProgramLevels" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Program Levels
+                    </button>
+                    <ul class="dropdown-menu list-unstyled" aria-labelledby="PleaseSelect" id="SelectProgramLevels">
+                        <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Undergraduate</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option2" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Post Graduate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 mb-2">
+                <div class="dropdown">
+                    <button class="btn pl-4 pr-4 btn-sm rounded-pill bg-b c-w dropdown-toggle" type="button"
+                        id="PleaseSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Please Select
+                    </button>
+                    <ul class="dropdown-menu list-unstyled" aria-labelledby="PleaseSelect">
+                        <li><a class="dropdown-item bg-lb" tabIndex="-1">For Undergraduate</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Certificate - 1 Year</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option2" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Diploma - 2 Years</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option3" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Advanced Diploma - 3 years</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option4" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Bachelors - 3 years</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Bachelors - 4 years</a></li>
+                        <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Post Graduate</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Post Graduate Certificate/Diploma</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option2" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Masters</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 mb-2">
+                <div class="dropdown">
+                    <button class="btn pl-4 pr-4 btn-sm rounded-pill bg-b c-w dropdown-toggle" type="button"
+                        id="SelectStream" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Stream
+                    </button>
+                    <ul class="dropdown-menu list-unstyled" aria-labelledby="SelectStream">
+                        <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Agriculture</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option2" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Engineering and Technology</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option3" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Science</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option4" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Arts</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Business Finance and Administration</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Computer Science and IT</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Social, Community Service and Teaching</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Health Food and Medical</a></li>
+                        <li><a href="#" class="dropdown-item" data-value="option5" tabIndex="-1"><input
+                                    type="checkbox" />&nbsp;Culinary, Hospitality, Tourism, Liesure and Sports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 mb-2">
+                <div class="dropdown">
+                    <button class="btn pl-4 pr-4 btn-sm rounded-pill bg-b c-w dropdown-toggle" type="button"
+                        id="SelectCourses" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Disciplines
+                    </button>
+                    <div class="row">
+                        <ul class="dropdown-menu list-unstyled" style="overflow:scroll; height:200px;"
+                            aria-labelledby="SelectCourses" id="__foragri">
+                            <li><a class="dropdown-item bg-lb" tabIndex="-1">For Agriculture</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Agriculture</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Engineering and Technology</a>
+                            </li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Aerospace, Aviation and Pilot Technology</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Agriculture</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Architecture</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Biomedical Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Chemical Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Civil Engineering, Construction</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Electrical Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Electronic</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Environmental Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Industrial</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Material Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Mechanical, Manufacturing, Robotic
+                                    Engineering</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Radiography</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Science</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Biochemistry</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Biology</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Chemistry</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Environmental, Earth Science</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;General</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Mathematics</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Pharmacy</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Physics</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Arts</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Humanitarian Services</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Political</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Psychology, Philosophy</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Animation</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Anthropology</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Communication</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;English Literature</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Fashion, Esthetics</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Fine Arts</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Gender Studies</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Geography</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Global Studies</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Graphic design, Interior design</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;History</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Journalism</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Languages</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Liberal Arts</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Law, Politics, Police, Security</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Music, Audio</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;General</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Sociology</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Business Finance and
+                                    Administration</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Accounting</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Entreprenuership</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Finance, Economics</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Human Resource</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;International Business</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Management, Administration, General</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Marketing, Analyst, Advertising</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Public Relation</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Supply Chain Management</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Computer Science and IT</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Game Design, animation, game creation</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Computer Science</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Social, Community Service and
+                                    Teaching</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Community, social service</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Teaching, Early Development, Child care</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Health Food and Medical</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Dental</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Food, Nutrition, Exercise</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Therapy</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Health Science</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Pharmacy</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Paramedic</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Veterinian</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Kinesiology</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Nursing</a></li>
+                            <li><a class="dropdown-item bg-lb mt-3" tabIndex="-1">For Culinary, Hospitality, Tourism,
+                                    Liesure and Sports</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Food and Culinary</a></li>
+                            <li><a href="#" class="dropdown-item" data-value="option1" tabIndex="-1"><input
+                                        type="checkbox" />&nbsp;Hospitality and Tourism, Recreation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="dropdown">
+                    <button class="btn pl-4 pr-4 btn-sm rounded-pill bg-b c-w dropdown-toggle" type="button"
+                        id="SelectEnglishScore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select English Score
+                    </button>
+                    <ul class="dropdown-menu list-unstyled" aria-labelledby="SelectEnglishScore">
+                        <li><a class="dropdown-item bg-lb" tabIndex="-1">For IELTS</a></li>
+                        <li><input class="ml-3 mt-3" id="r_a" type="range" name="ielts_r_a" step="0.5" min="5.0"
+                                max="9.0" style="width: 70%;"><span id="v_a" class="ml-2 ">7</span></li>
+                        <script>
+                            document.getElementById('r_a').onchange = function () {
+                                document.getElementById('v_a').innerHTML = this.value;
+                            };
+                        </script>
+
+                        <li><a class="dropdown-item mt-3 bg-lb" tabIndex="-1">For PTE</a></li>
+                        <li><input class="ml-3 mt-3" id="r_b" type="range" name="pte_r_a" step="0.5" min="50" max="90"
+                                style="width: 70%;"><span id="v_b" class="ml-2 ">70</span></li>
+                        <script>
+                            document.getElementById('r_b').onchange = function () {
+                                document.getElementById('v_b').innerHTML = this.value;
+                            };
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- college name -->
+        <div class="row">
+            <div class="col-md-4 mb-2">
+                <div class="ins_name" id="ins_name">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action clg-name" id="list-iname1-list"
+                            onclick="myfunc_ins1course()" name="list-iname1-list">Institute Name 1<br><span>Campus
+                                Name</span><span class="float-right"><i
+                                    class="fa fa-chevron-right"></i></span><br><span>City, Canada</span> <span
+                                class="flag-icon flag-icon-ca"></span></a>
+                        <a class="list-group-item list-group-item-action clg-name" id="list-iname2-list"
+                            onclick="myfunc_ins2course()" name="list-iname2-list">Institute Name 2<br><span>Campus
+                                Name</span><span class="float-right"><i
+                                    class="fa fa-chevron-right"></i></span><br><span>City, Canada</span> <span
+                                class="flag-icon flag-icon-ca"></span></a>
+                        <a class="list-group-item list-group-item-action clg-name" id="list-iname3-list"
+                            onclick="myfunc_ins3course()" name="list-iname3-list">Institute Name 3<br><span>Campus
+                                Name</span><span class="float-right"><i
+                                    class="fa fa-chevron-right"></i></span><br><span>City, Canada</span> <span
+                                class="flag-icon flag-icon-ca"></span></a>
+                        <a class="list-group-item list-group-item-action clg-name" id="list-iname4-list"
+                            onclick="myfunc_ins4course()" name="list-iname4-list">Institute Name 4<br><span>Campus
+                                Name</span><span class="float-right"><i
+                                    class="fa fa-chevron-right"></i></span><br><span>City, Canada</span> <span
+                                class="flag-icon flag-icon-ca"></span></a>
+                        <a class="list-group-item list-group-item-action clg-name" id="list-iname5-list"
+                            onclick="myfunc_ins5course()" name="list-iname5-list">Institute Name 5<br><span>Campus
+                                Name</span><span class="float-right"><i
+                                    class="fa fa-chevron-right"></i></span><br><span>City, Canada</span> <span
+                                class="flag-icon flag-icon-ca"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- courses name -->
+            <div class="col-md-4 mb-2">
+                <div class="ins_courses" id="ins_courses">
+                    <div id="ins1courses" style="display: none;">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action course_name" id="list-i1course1-list"
+                                onclick="myfunc_i1course1()" name="list-i1course1-list">Course Name 1 of Institute 1
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i1course2-list"
+                                onclick="myfunc_i1course2()" name="list-i1course2-list">Course Name 2 of Institute 1
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i1course3-list"
+                                onclick="myfunc_i1course3()" name="list-i1course3-list">Course Name 3 of Institute 1
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i1course4-list"
+                                onclick="myfunc_i1course4()" name="list-i1course4-list">Course Name 4 of Institute 1
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i1course5-list"
+                                onclick="myfunc_i1course5()" name="list-i1course5-list">Course Name 5 of Institute 1
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                    <div id="ins2courses" style="display: none;">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action course_name" id="list-i2course1-list"
+                                onclick="myfunc_i2course1()" name="list-i2course1-list">Course Name 1 of Institute 2
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i2course2-list"
+                                onclick="myfunc_i2course2()" name="list-i2course2-list">Course Name 2 of Institute 2
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i2course3-list"
+                                onclick="myfunc_i2course3()" name="list-i2course3-list">Course Name 3 of Institute 2
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i2course4-list"
+                                onclick="myfunc_i2course4()" name="list-i2course4-list">Course Name 4 of Institute 2
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i2course5-list"
+                                onclick="myfunc_i2course5()" name="list-i2course5-list">Course Name 5 of Institute 2
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                    <div id="ins3courses" style="display: none;">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action course_name" id="list-i3course1-list"
+                                onclick="myfunc_i3course1()" name="list-i3course1-list">Course Name 1 of Institute 3
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i3course2-list"
+                                onclick="myfunc_i3course2()" name="list-i3course2-list">Course Name 2 of Institute 3
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i3course3-list"
+                                onclick="myfunc_i3course3()" name="list-i3course3-list">Course Name 3 of Institute 3
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i3course4-list"
+                                onclick="myfunc_i3course4()" name="list-i3course4-list">Course Name 4 of Institute 3
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i3course5-list"
+                                onclick="myfunc_i3course5()" name="list-i3course5-list">Course Name 5 of Institute 3
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                    <div id="ins4courses" style="display: none;">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action course_name" id="list-i4course1-list"
+                                onclick="myfunc_i4course1()" name="list-i4course1-list">Course Name 1 of Institute 4
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i4course2-list"
+                                onclick="myfunc_i4course2()" name="list-i4course2-list">Course Name 2 of Institute 4
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i4course3-list"
+                                onclick="myfunc_i4course3()" name="list-i4course3-list">Course Name 3 of Institute 4
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i4course4-list"
+                                onclick="myfunc_i4course4()" name="list-i4course4-list">Course Name 4 of Institute 4
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i4course5-list"
+                                onclick="myfunc_i4course5()" name="list-i4course5-list">Course Name 5 of Institute 4
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                    <div id="ins5courses" style="display: none;">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action course_name" id="list-i5course1-list"
+                                onclick="myfunc_i5course1()" name="list-i5course1-list">Course Name 1 of Institute 5
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i5course2-list"
+                                onclick="myfunc_i5course2()" name="list-i5course2-list">Course Name 2 of Institute 5
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i5course3-list"
+                                onclick="myfunc_i5course3()" name="list-i5course3-list">Course Name 3 of Institute 5
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i5course4-list"
+                                onclick="myfunc_i5course4()" name="list-i5course4-list">Course Name 4 of Institute 5
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                            <a class="list-group-item list-group-item-action course_name" id="list-i5course5-list"
+                                onclick="myfunc_i5course5()" name="list-i5course5-list">Course Name 5 of Institute 5
+                                <span class="float-right"><i class="fa fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- details -->
+            <div class="col-md-4 mb-2">
+                <div class="courses_details" id="courses_details_i1course1" style="display: none;">
+                    <div id="ins1courses1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title c-w bg-b p-2 text-center">Institute Name 1, Campus Name, Canada.
+                                </h5>
+                                <p class="card-text"><i class="fa fa-book"></i> Course Name: </p>
+                                <p class="card-text"><i class="fa fa-money"></i> Application Fee: </p>
+                                <p class="card-text"><i class="fa fa-usd"></i> Tuition Fee: </p>
+                                <p class="card-text"><i class="fa fa-plane"></i> Intake: </p>
+                                <p class="card-text"><i class="fa fa-home"></i> Duration: </p>
+                                <p class="card-text"><i class="fa fa-sort-amount-asc"></i> Shortlist: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> IELTS: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> PTE: </p>
+                                <a href="#" class="btn btn-sm rounded-pill readmore" onclick="readmore()">Read
+                                    More...</a>
+                                <a href="detail.html" target="_blank" class="btn btn-sm rounded-pill">Read More in New
+                                    Tab...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Apply Now...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Avail Counselling...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="courses_details" id="courses_details_i2course1" style="display: none;">
+                    <div id="ins2courses1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title c-w bg-b p-2 text-center">Institute Name 2, Campus Name, Canada.
+                                </h5>
+                                <p class="card-text"><i class="fa fa-book"></i> Course Name: </p>
+                                <p class="card-text"><i class="fa fa-money"></i> Application Fee: </p>
+                                <p class="card-text"><i class="fa fa-usd"></i> Tuition Fee: </p>
+                                <p class="card-text"><i class="fa fa-plane"></i> Intake: </p>
+                                <p class="card-text"><i class="fa fa-home"></i> Duration: </p>
+                                <p class="card-text"><i class="fa fa-sort-amount-asc"></i> Shortlist: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> IELTS: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> PTE: </p>
+                                <a href="#" class="btn btn-sm rounded-pill readmore" onclick="readmore()">Read
+                                    More...</a>
+                                <a href="detail.html" target="_blank" class="btn btn-sm rounded-pill">Read More in New
+                                    Tab...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Apply Now...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Avail Counselling...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="courses_details" id="courses_details_i3course1" style="display: none;">
+                    <div id="ins3courses1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title c-w bg-b p-2 text-center">Institute Name 3, Campus Name, Canada.
+                                </h5>
+                                <p class="card-text"><i class="fa fa-book"></i> Course Name: </p>
+                                <p class="card-text"><i class="fa fa-money"></i> Application Fee: </p>
+                                <p class="card-text"><i class="fa fa-usd"></i> Tuition Fee: </p>
+                                <p class="card-text"><i class="fa fa-plane"></i> Intake: </p>
+                                <p class="card-text"><i class="fa fa-home"></i> Duration: </p>
+                                <p class="card-text"><i class="fa fa-sort-amount-asc"></i> Shortlist: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> IELTS: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> PTE: </p>
+                                <a href="#" class="btn btn-sm rounded-pill readmore" onclick="readmore()">Read
+                                    More...</a>
+                                <a href="detail.html" target="_blank" class="btn btn-sm rounded-pill">Read More in New
+                                    Tab...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Apply Now...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Avail Counselling...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="courses_details" id="courses_details_i4course1" style="display: none;">
+                    <div id="ins4courses1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title c-w bg-b p-2 text-center">Institute Name 4, Campus Name, Canada.
+                                </h5>
+                                <p class="card-text"><i class="fa fa-book"></i> Course Name: </p>
+                                <p class="card-text"><i class="fa fa-money"></i> Application Fee: </p>
+                                <p class="card-text"><i class="fa fa-usd"></i> Tuition Fee: </p>
+                                <p class="card-text"><i class="fa fa-plane"></i> Intake: </p>
+                                <p class="card-text"><i class="fa fa-home"></i> Duration: </p>
+                                <p class="card-text"><i class="fa fa-sort-amount-asc"></i> Shortlist: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> IELTS: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> PTE: </p>
+                                <a href="#" class="btn btn-sm rounded-pill readmore" onclick="readmore()">Read
+                                    More...</a>
+                                <a href="detail.html" target="_blank" class="btn btn-sm rounded-pill">Read More in New
+                                    Tab...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Apply Now...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Avail Counselling...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="courses_details" id="courses_details_i5course1" style="display: none;">
+                    <div id="ins5courses1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title c-w bg-b p-2 text-center">Institute Name 5, Campus Name, Canada.
+                                </h5>
+                                <p class="card-text"><i class="fa fa-book"></i> Course Name: </p>
+                                <p class="card-text"><i class="fa fa-money"></i> Application Fee: </p>
+                                <p class="card-text"><i class="fa fa-usd"></i> Tuition Fee: </p>
+                                <p class="card-text"><i class="fa fa-plane"></i> Intake: </p>
+                                <p class="card-text"><i class="fa fa-home"></i> Duration: </p>
+                                <p class="card-text"><i class="fa fa-sort-amount-asc"></i> Shortlist: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> IELTS: </p>
+                                <p class="card-text"><i class="fa fa-globe"></i> PTE: </p>
+                                <a href="#" class="btn btn-sm rounded-pill readmore" onclick="readmore()">Read
+                                    More...</a>
+                                <a href="detail.html" target="_blank" class="btn btn-sm rounded-pill">Read More in New
+                                    Tab...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Apply Now...</a>
+                                <a href="#" class="btn btn-sm rounded-pill">Avail Counselling...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- block 2 start -->
+    <div class="container mb-5" id="block2" style="display: none;">
+        <div class="row">
+            <div class="col text-center  mt-3 mb-2">
+                <div class="card float-left px-0 mt-3 pb-0  mb-3">
+                    <h4 class="c-b" onclick="bak()" id="back"><i class="fa fa-angle-left"></i> Back</h4>
+                </div>
+            </div>
+            <div class="col text-center  mt-3 mb-2">
+                <div class="card px-0 mt-3 pb-0  mb-3">
+                    <h4 id="heading">StudyNext Search</h4>
+                </div>
+            </div>
+            <div class="col text-center  mt-3 mb-2">
+                <div class="card px-0 mt-3 pb-0  mb-3">
+                </div>
+            </div>
+        </div>
+        <!-- for pc -->
+        <div id="forPC">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td colspan="2" class="text-center">Program Name, Institution name, Country Logo <span class="flag-icon flag-icon-ca"></span></td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td colspan="2" class="text-center">Campus, City</td>
+                    </tr>
+                    <tr class="bg-lb">
+                        <td class="text-center" style="width: 50%; font-size: 15px;">Program Level</td>
+                        <td class="text-center" style="width: 50%; font-size: 15px;">Program Description</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">
+                            <ul class="ml-3" style="line-height: 40px;">
+                                <li>Annual Tuition Fee:</li>
+                                <li>Application Fee:</li>
+                                <li>Intake:</li>
+                                <li>Duration:</li>
+                                <li>PGWP Eligible:</li>
+                                <li>Appication Deadline:</li>
+                            </ul>
+                        </td>
+                        <td>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </td>
+                    </tr>
+                    <tr class="bg-lb">
+                        <td class="text-center" style="width: 50%; font-size: 15px;">Admission Criteria</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                    <tr class="bg-lb">
+                        <td class="text-center" style="width: 50%; font-size: 15px;">DLI Number</td>
+                        <td class="text-center" style="width: 50%; font-size: 15px;">Language Criteria</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">DLI No.</td>
+                        <td>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </td>
+                    </tr>
+                    <tr class="bg-lb">
+                        <td class="text-center" style="width: 50%; font-size: 15px;">Additiional Information</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- for mobile -->
+        <div id="forMOBILE">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Program Name, Institution name, Country Logo</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Campus, City</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Program Level</td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td>
+                            <ul class="ml-3" style="line-height: 30px;">
+                                <li>Annual Tuition Fee:</li>
+                                <li>Application Fee:</li>
+                                <li>Intake:</li>
+                                <li>Duration:</li>
+                                <li>PGWP Eligible:</li>
+                                <li>Appication Deadline:</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Program Description</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Admission Criteria</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">DLI Number</td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td>DLI No.</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Language Criteria</td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                    <tr class="bg-lb" style="width: 100%; font-size: 15px;">
+                        <td class="text-center">Additiional Information</td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS File -->
+    <script src="assets/js/custom.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").animate({
+                    width: "toggle"
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".readmore").click(function () {
+                $("#block2").animate({
+                    width: "toggle"
+                });
+            });
+        });
+    </script>
+
+    <script>
+        function readmore() {
+            document.getElementById('block1').style.display = 'none';
+        }
+    </script>
+
+    <script>
+        function bak() {
+            document.getElementById('block2').style.display = 'none';
+            document.getElementById('block1').style.display = 'block';
+        }
+    </script>
+
+
+</body>
+
+</html>
